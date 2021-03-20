@@ -9,8 +9,8 @@ std::vector<fixture>* stageInit() {
   static sf::Texture spikes;
   spikes.loadFromFile("spikes.png");
   stages[0] = collisionPlayground(spikes);
-  //stages[1] = stageTwo(spikes);
-  stages[1] = stageFour(spikes);
+  stages[1] = stageTwo(spikes);
+  stages[2] = stageFour(spikes);
   return stages;
 }
 
@@ -90,15 +90,148 @@ std::vector<fixture> stageTwo(sf::Texture& spike)
 {
     std::vector<fixture> sTwo;
     //window boundaries
-    fixture fix1(false, false, spike, 25, 800, 0, 0);
-    fixture fix2(false, false, spike, 25, 800, 1175, 0);
-    fixture fix3(false, false, spike, 1150, 25, 25, 0);
-    fixture fix4(false, false, spike, 1150, 25, 25, 775);
+    fixture fix1(false, false, spike, 25, 1100, 0, -100);
+    fixture fix2(false, false, spike, 25, 900, 1175, 0);
+    fixture fix3(false, false, spike, 1155, 25, 25, 0);
+    fixture fix4(false, false, spike, 175, 25, 25, 775);
+    //*****************
+    //wall between player and win (the long way wall)
+    fixture fix5(false, false, spike, 25, 701, 75, 50);
+    fixture fix32(false, false, spike, 1050, 25, 100, 50);
+    //***********************************************
+    //win point
+    fixture win(false, true, spike, 50, 50, 25, 725);
+    win.platform.setFillColor(sf::Color(255,255,255));
+    //*********
+    //starting box
+    fixture fix6(false, false, spike, 50, 25, 100, 625);
+    fixture fix7(false, false, spike, 25, 100, 125, 650);
+    //************
+
+
+    //ladder segment
+    fixture fix8(false, false, spike, 25, 750, 175, 100);
+    fixture fix9(false, false, spike, 25, 25, 150, 450);
+    fixture fix10(false, false, spike, 25, 25, 100, 275);
+    fixture fix11(false, false, spike, 25, 25, 150, 100);
+    //**************
+
+
+    //pit
+    //spikes
+    fixture fix12(true, false, spike, 0, 0, 200, 1000);
+    fixture fix13(true, false, spike, 0, 0, 250, 1000);
+    fixture fix14(true, false, spike, 0, 0, 300, 1000);
+    fixture fix15(true, false, spike, 0, 0, 350, 1000);
+    fixture fix16(true, false, spike, 0, 0, 400, 1000);
+    fixture fix17(true, false, spike, 0, 0, 450, 1000);
+    fixture fix18(true, false, spike, 0, 0, 500, 1000);
+    fixture fix19(true, false, spike, 0, 0, 550, 1000);
+    fixture fix20(true, false, spike, 0, 0, 600, 1000);
+    fixture fix21(true, false, spike, 0, 0, 650, 1000);
+    fixture fix22(true, false, spike, 0, 0, 700, 1000);
+    fixture fix23(true, false, spike, 0, 0, 750, 1000);
+    fixture fix24(true, false, spike, 0, 0, 800, 1000);
+    fixture fix25(true, false, spike, 0, 0, 850, 1000);
+    fixture fix26(true, false, spike, 0, 0, 900, 1000);
+    fixture fix27(true, false, spike, 0, 0, 950, 1000);
+    fixture fix28(true, false, spike, 0, 0, 1000, 1000);
+    fixture fix29(true, false, spike, 0, 0, 1050, 1000);
+    fixture fix30(true, false, spike, 0, 0, 1100, 1000);
+    fixture fix31(true, false, spike, 0, 0, 1150, 1000);
+    //******
+
+
+    //void platforms
+    fixture fix33(false, false, spike, 50, 25, 350, 700); //first platform
+    fixture fix34(true, false, spike, 0, 0, 300, 675);
+    fixture fix35(true, false, spike, 0, 0, 400, 675);
+    fixture fix36(false, false, spike, 50, 25, 550, 600); //second platform
+    fixture fix37(true, false, spike, 0, 0, 500, 575);
+    fixture fix38(true, false, spike, 0, 0, 600, 575);
+    fixture fix39(false, false, spike, 50, 25, 750, 500); //third platform
+    fixture fix40(true, false, spike, 0, 0, 700, 475);
+    fixture fix41(true, false, spike, 0, 0, 800, 475);
+    fixture fix42(false, false, spike, 50, 25, 550, 400); //fourth platform
+    fixture fix43(true, false, spike, 0, 0, 500, 375);
+    //fixture test(false, false, spike, 50, 1, 500, 425);
+    fixture fix44(true, false, spike, 0, 0, 600, 375);
+    fixture fix45(false, false, spike, 50, 25, 750, 300); //fifth platform
+    fixture fix46(true, false, spike, 0, 0, 700, 275);
+    fixture fix47(true, false, spike, 0, 0, 800, 275);
+    fixture fix48(false, false, spike, 50, 25, 1125, 500); //first wall platform
+    fixture fix49(true, false, spike, 0, 0, 1075, 475);
+    fixture fix50(false, false, spike, 25, 25, 1150, 325); //second wall platform
+    fixture fix51(true, false, spike, 0, 0, 1150, 400);
+    fix51.hazard.rotate(270);
+    fixture fix52(false, false, spike, 25, 25, 1150, 150); //third wall platform
+    fixture fix53(true, false, spike, 0, 0, 1150, 225);
+    fix53.hazard.rotate(270);
+
+
+    //The Short Way
+    fixture secretPlatform(false, false, spike, 205, 1, 0, 900);
+    fixture secretWin(false, true, spike, 25, 25, 0, 875);
+    //*************
+
 
     sTwo.push_back(fix1);
     sTwo.push_back(fix2);
     sTwo.push_back(fix3);
     sTwo.push_back(fix4);
+    sTwo.push_back(fix5);
+    sTwo.push_back(fix6);
+    sTwo.push_back(fix7);
+    sTwo.push_back(fix8);
+    sTwo.push_back(fix9);
+    sTwo.push_back(fix10);
+    sTwo.push_back(fix11);
+    sTwo.push_back(fix12);
+    sTwo.push_back(fix13);
+    sTwo.push_back(fix14);
+    sTwo.push_back(fix15);
+    sTwo.push_back(fix16);
+    sTwo.push_back(fix17);
+    sTwo.push_back(fix18);
+    sTwo.push_back(fix19);
+    sTwo.push_back(fix20);
+    sTwo.push_back(fix21);
+    sTwo.push_back(fix22);
+    sTwo.push_back(fix23);
+    sTwo.push_back(fix24);
+    sTwo.push_back(fix25);
+    sTwo.push_back(fix26);
+    sTwo.push_back(fix27);
+    sTwo.push_back(fix28);
+    sTwo.push_back(fix29);
+    sTwo.push_back(fix30);
+    sTwo.push_back(fix31);
+    sTwo.push_back(fix32);
+    sTwo.push_back(fix33);
+    sTwo.push_back(fix34);
+    sTwo.push_back(fix35);
+    sTwo.push_back(fix36);
+    sTwo.push_back(fix37);
+    sTwo.push_back(fix38);
+    sTwo.push_back(fix39);
+    sTwo.push_back(fix40);
+    sTwo.push_back(fix41);
+    sTwo.push_back(fix42);
+    sTwo.push_back(fix43);
+    sTwo.push_back(fix44);
+    sTwo.push_back(fix45);
+    sTwo.push_back(fix46);
+    sTwo.push_back(fix47);
+    sTwo.push_back(fix48);
+    sTwo.push_back(fix49);
+    sTwo.push_back(fix50);
+    sTwo.push_back(fix51);
+    sTwo.push_back(fix52);
+    sTwo.push_back(fix53);
+
+    sTwo.push_back(win);
+    sTwo.push_back(secretPlatform);
+    sTwo.push_back(secretWin);
     return sTwo;
 }
 
@@ -127,6 +260,8 @@ std::vector<fixture> stageFour(sf::Texture& spike)
     fixture fix67(true, false, spike, 0, 0, 925, 725);
     //*******************
     //bottom floor left wall spikes
+    fixture fix46(true, false, spike, 0, 0, 75, 650);
+    fix46.hazard.rotate(90);
     fixture fix68(true, false, spike, 0, 0, 75, 725);
     fix68.hazard.rotate(90);
     fixture fix69(true, false, spike, 0, 0, 75, 675);
@@ -215,8 +350,8 @@ std::vector<fixture> stageFour(sf::Texture& spike)
     //******************
     //platform to win and win point
     fixture fix45(false, false, spike, 25, 25, 125, 200);
-    fixture fix46(false, true, spike, 50, 50, 250, 75);
-    fix46.platform.setFillColor(sf::Color(255,255,255));
+    fixture win(false, true, spike, 50, 50, 250, 75);
+    win.platform.setFillColor(sf::Color(255,255,255));
     //*****************************
 
     //third floor spike array
@@ -318,5 +453,7 @@ std::vector<fixture> stageFour(sf::Texture& spike)
     sFour.push_back(fix67);
     sFour.push_back(fix68);
     sFour.push_back(fix69);
+
+    sFour.push_back(win);
     return sFour;
 }
