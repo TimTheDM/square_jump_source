@@ -1,7 +1,7 @@
 //header file for stage_init
 
 const int PLAYER_SIZE = 25;
-const int STAGE_TOTAL = 1;
+const int STAGE_TOTAL = 3;
 const int START_X = 100;
 const int START_Y = 650;
 
@@ -25,3 +25,5 @@ class player {
 
 std::vector<fixture>* stageInit();
 std::vector<fixture> collisionPlayground(sf::Texture&);
+std::vector<fixture> stageTwo(sf::Texture&);
+std::vector<fixture> stageFour(sf::Texture&);

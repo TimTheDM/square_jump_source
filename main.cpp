@@ -18,7 +18,7 @@ int main()
 
   //class named fixture is what each platform, hazard, and win point is in a stage represented
   std::vector<fixture>* stages = stageInit();
-  int stageOn = 0;
+  int stageOn = 1;
   //calls constructor for object representing players controlled square
   player p1;
 
@@ -37,7 +37,7 @@ int main()
     //depending on results of collision checks and existing acceleration variable
     //gravity then displaces player objects sprite member
     gravity(stages, p1, stageOn);
-    
+
     //Checks if the player object has collided with a hazard or winPoint type fixture
     //Calls a function to change player position to start point if it does, and increments stageOn
     //If the colliding fixture was a win point type
