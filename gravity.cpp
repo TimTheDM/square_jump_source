@@ -19,7 +19,7 @@ As such, the player sprite is moved in a negative acceleration (-p1.acceleration
 
 const double jumpHeight = 200.0; //rough height the top edge of the player in pixels, actual may change due to rounding error.
 const double timeToApex = 20.0; //time in game frames to reach the height of the jump
-const double maxFallRate = -1.5 * (-((2 * jumpHeight)/(timeToApex * timeToApex)) + ((2 * jumpHeight)/timeToApex)); //limits the maximum downward acceleration to twice the normal jump arc
+const double maxFallRate = -0.8 * (-((2 * jumpHeight)/(timeToApex * timeToApex)) + ((2 * jumpHeight)/timeToApex)); //limits the maximum downward acceleration to twice the normal jump arc
 
 sf::Vector2f position;
 bool pressed = false;
@@ -62,7 +62,7 @@ void gravity(std::vector<fixture>* stages, player& p1, int stageOn) {
       }
       else
       {
-          p1.acceleration += -2 * ((2 * jumpHeight)/(timeToApex * timeToApex));
+          p1.acceleration += -3.5 * ((2 * jumpHeight)/(timeToApex * timeToApex));
       }
       if (p1.acceleration < maxFallRate)
       {
