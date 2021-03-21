@@ -25,4 +25,5 @@ class player {
 
 std::vector<fixture>* stageInit();
 std::vector<fixture> collisionPlayground(sf::Texture&);
+std::vector<fixture> hardCarson(sf::Texture&);
 std::vector<fixture> easyCarson(sf::Texture&);
