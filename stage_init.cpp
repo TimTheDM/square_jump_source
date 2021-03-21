@@ -88,7 +88,7 @@ std::vector<fixture> easyCarson(sf::Texture& spike) {
   fixture victory(false, true, spike, 50, 50, 675, 675);
   victory.platform.setFillColor(sf::Color(255,255,255));
   fixture victoryFlag(false, false, spike, 25, 100, 650, 675);
-  fixture optionalVictory(false, true, spike, 25, 25, 450, 750);
+  fixture optionalVictory(false, true, spike, 25, 25, 455, 750);
   optionalVictory.platform.setFillColor(sf::Color(255,0,0));
 
   fixture floor(false, false, spike, 1200, 25, 0, 775);
@@ -104,7 +104,10 @@ std::vector<fixture> easyCarson(sf::Texture& spike) {
   fixture leftPlat3(false, false, spike, 200, 25, 0, 295);
   fixture leftPlat4(false, false, spike, 100, 25, 0, 150);
 
-  fixture floatPlat(false, false, spike, 60, 25, 545, 150);
+  fixture floatPlat1(false, false, spike, 60, 25, 545, 150);
+  fixture floatPlat2(false, false, spike, 50, 25, 250, 35);
+  fixture floatPlat3(false, false, spike, 25, 60, 325, 0);
+
   fixture floatSpike1(true, false, spike, 50, 50, 600, 225);
   floatSpike1.hazard.rotate(180);
   fixture floatSpike2(true, false, spike, 50, 50, 550, 100);
@@ -128,10 +131,10 @@ std::vector<fixture> easyCarson(sf::Texture& spike) {
   fixture leftSidePit1(true, false, spike, 50, 50, 150, 725);
   fixture leftSidePit2(true, false, spike, 50, 50, 200, 725);
   fixture leftSidePit3(true, false, spike, 50, 50, 250, 725);
-  fixture leftSidePit4(true, false, spike, 50, 50, 325, 725);
-  fixture leftSidePit5(true, false, spike, 50, 50, 375, 725);
-  fixture leftSidePit6(true, false, spike, 50, 50, 500, 725);
-  fixture leftSidePit7(true, false, spike, 50, 50, 550, 725);
+  fixture leftSidePit4(true, false, spike, 50, 50, 330, 725);
+  fixture leftSidePit5(true, false, spike, 50, 50, 380, 725);
+  fixture leftSidePit6(true, false, spike, 50, 50, 510, 725);
+  fixture leftSidePit7(true, false, spike, 50, 50, 560, 725);
 
   pitfall.push_back(victory);
   pitfall.push_back(victoryFlag);
@@ -149,7 +152,10 @@ std::vector<fixture> easyCarson(sf::Texture& spike) {
   pitfall.push_back(rightPlat1);
   pitfall.push_back(rightPlat2);
 
-  pitfall.push_back(floatPlat);
+  pitfall.push_back(floatPlat1);
+  pitfall.push_back(floatPlat2);
+  pitfall.push_back(floatPlat3);
+
   pitfall.push_back(floatSpike1);
   pitfall.push_back(floatSpike2);
 
