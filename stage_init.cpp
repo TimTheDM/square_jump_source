@@ -200,14 +200,14 @@ std::vector<fixture> easyCarson(sf::Texture& spike) {
   fixture tree1(false, false, spike, 25, 1100, 300, 100);
   tree1.platform.setFillColor(sf::Color(139,69,19));
 
-  fixture tree1Plat1(false, false, spike, 200, 25, 100, 650);
+  fixture tree1Plat1(false, false, spike, 150, 25, 150, 700);
   tree1Plat1.platform.setFillColor(sf::Color(0,200,0));
-  fixture tree1Plat2(false, false, spike, 150, 25, 150, 500);
+  fixture tree1Plat2(false, false, spike, 100, 25, 200, 580);
   tree1Plat2.platform.setFillColor(sf::Color(0,200,0));
 
-  fixture tree1Plat3(false, false, spike, 100, 25, 200, 350);
+  fixture tree1Plat3(false, false, spike, 50, 25, 250, 420);
   tree1Plat3.platform.setFillColor(sf::Color(0,200,0));
-  fixture tree1Plat4(false, false, spike, 50, 25, 250, 200);
+  fixture tree1Plat4(false, false, spike, 25, 25, 275, 230);
   tree1Plat4.platform.setFillColor(sf::Color(0,200,0));
 
   fixture trunk1(false, false, spike, 50, 100, 950, 675);
