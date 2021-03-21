@@ -91,7 +91,7 @@ std::vector<fixture> hardCarson(sf::Texture& spike) {
   victory.platform.setFillColor(sf::Color(255,255,255));
   fixture victoryFlag(false, false, spike, 25, 100, 650, 675);
   fixture optionalVictory(false, true, spike, 25, 25, 455, 750);
-  optionalVictory.platform.setFillColor(sf::Color(255,0,0));
+  optionalVictory.platform.setFillColor(sf::Color(255,255,255));
 
   fixture floor(false, false, spike, 1200, 25, 0, 775);
   fixture leftWall(false, false, spike, 25, 1200, 0, 0);
@@ -101,7 +101,7 @@ std::vector<fixture> hardCarson(sf::Texture& spike) {
   fixture rightPlat1(false, false, spike, 275, 25, 350, 500);
   fixture rightPlat2(false, false, spike, 50, 25, 550, 400);
 
-  fixture leftPlat1(false, false, spike, 100, 25, 100, 600);
+  fixture leftPlat1(false, false, spike, 100, 25, 0, 600);
   fixture leftPlat2(false, false, spike, 200, 25, 0, 350);
   fixture leftPlat3(false, false, spike, 200, 25, 0, 295);
   fixture leftPlat4(false, false, spike, 100, 25, 0, 150);
@@ -130,11 +130,11 @@ std::vector<fixture> hardCarson(sf::Texture& spike) {
   fixture mazeSpike6(true, false, spike, 50, 50, 900, 625);
   mazeSpike6.hazard.rotate(180);
 
-  fixture leftSidePit1(true, false, spike, 50, 50, 140, 725);
-  fixture leftSidePit2(true, false, spike, 50, 50, 190, 725);
-  fixture leftSidePit3(true, false, spike, 50, 50, 240, 725);
-  fixture leftSidePit4(true, false, spike, 50, 50, 330, 725);
-  fixture leftSidePit5(true, false, spike, 50, 50, 380, 725);
+  fixture leftSidePit1(true, false, spike, 50, 50, 149, 725);
+  fixture leftSidePit2(true, false, spike, 50, 50, 199, 725);
+  fixture leftSidePit3(true, false, spike, 50, 50, 249, 725);
+  fixture leftSidePit4(true, false, spike, 50, 50, 326, 725);
+  fixture leftSidePit5(true, false, spike, 50, 50, 376, 725);
   fixture leftSidePit6(true, false, spike, 50, 50, 510, 725);
   fixture leftSidePit7(true, false, spike, 50, 50, 560, 725);
 
