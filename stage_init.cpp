@@ -1,6 +1,7 @@
 #include<vector>
 #include <SFML/Graphics.hpp>
 #include "stage_init.h"
+#include "tim_stages.h"
 
 std::vector<fixture>* stageInit();
 
