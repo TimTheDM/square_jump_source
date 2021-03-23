@@ -5,6 +5,7 @@
 #include "movement.h"
 #include "gravity.h"
 #include "collision.h"
+#include "tim_stages.h"
 
 const int WINDOW_LENGTH = 1200;
 const int WINDOW_HEIGHT = 800;
@@ -21,6 +22,7 @@ int main()
   int stageOn = 1;
   //calls constructor for object representing players controlled square
   player p1;
+  bool isDead = false;
 
   while (window.isOpen()) {
     sf::Event event;
@@ -41,7 +43,7 @@ int main()
     //Checks if the player object has collided with a hazard or winPoint type fixture
     //Calls a function to change player position to start point if it does, and increments stageOn
     //If the colliding fixture was a win point type
-    stageOn = stateCheck(stages, p1, stageOn);
+    stageOn = stateCheck(stages, p1, stageOn, isDead);
 
     //If last stage is cleared, window is closed for now
     if (stageOn >= STAGE_TOTAL) {
@@ -52,6 +54,10 @@ int main()
     //draws all game elements in their updated positions
     drawGame(window, stages, p1, stageOn);
     window.display();
+    if (isDead) {
+      startMove(p1);
+      isDead = false;
+    }
   }
 
   return 0;
