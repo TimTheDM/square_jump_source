@@ -12,6 +12,12 @@ std::vector<fixture>* stageInit() {
   static sf::Texture spikes;
   spikes.loadFromFile("spikes.png");
   stages[0] = collisionPlayground(spikes);
+  stages[1] = easyCarson(spikes);
+  stages[2] = hardCarson(spikes);
+  stages[3] = mimeMaze(spikes);
+  stages[4] = stageTwo(spikes);
+  stages[5] = stageFour(spikes);
+  stages[6] = spikeEverest(spikes);
   return stages;
 }
 
