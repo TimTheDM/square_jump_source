@@ -25,5 +25,3 @@ class player {
 
 std::vector<fixture>* stageInit();
 std::vector<fixture> collisionPlayground(sf::Texture&);
-std::vector<fixture> stageTwo(sf::Texture&);
-std::vector<fixture> stageFour(sf::Texture&);
