@@ -2,6 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include "stage_init.h"
 #include "tim_stages.h"
+#include "alex_stages.h"
+#include "carson_stages.h"
 
 std::vector<fixture>* stageInit();
 
