@@ -5,6 +5,7 @@
 #include "movement.h"
 #include "gravity.h"
 #include "collision.h"
+#include "tim_stages.h"
 
 const int WINDOW_LENGTH = 1200;
 const int WINDOW_HEIGHT = 800;
@@ -18,7 +19,7 @@ int main()
 
   //class named fixture is what each platform, hazard, and win point is in a stage represented
   std::vector<fixture>* stages = stageInit();
-  int stageOn = 0;
+  int stageOn = 1;
   //calls constructor for object representing players controlled square
   player p1;
 

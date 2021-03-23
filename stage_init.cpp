@@ -10,6 +10,7 @@ std::vector<fixture>* stageInit() {
   static sf::Texture spikes;
   spikes.loadFromFile("spikes.png");
   stages[0] = collisionPlayground(spikes);
+  stages[1] = mimeMaze(spikes);
   return stages;
 }
 

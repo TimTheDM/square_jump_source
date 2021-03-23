@@ -1,7 +1,7 @@
 //header file for stage_init
 
 const int PLAYER_SIZE = 25;
-const int STAGE_TOTAL = 1;
+const int STAGE_TOTAL = 2;
 const int START_X = 100;
 const int START_Y = 650;
 
