@@ -1,5 +1,6 @@
 #include<vector>
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include "stage_init.h"
 #include "tim_stages.h"
 
@@ -155,5 +156,293 @@ std::vector<fixture> mimeMaze(sf::Texture& spike) {
 
 std::vector<fixture> spikeEverest(sf::Texture& spike) {
   std::vector<fixture> spikeEverest;
+  
+  //ascent spikes
+
+  spikeEverest.push_back(*new fixture(true, false, spike, 0, 0, 185, 160));
+
+  for (int i = 750;i >= 50;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, 60, i);
+    spikeWall->hazard.rotate(90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 800;i >= 250;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, 160, i);
+    spikeWall->hazard.rotate(-90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 400;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i, 50);
+    spikeWall->hazard.rotate(180);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 300;i >= 250;i -= 25) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i, i-50);
+    if (i == 300) spikeWall->hazard.move(0, 50);
+    else if (i == 275) spikeWall->hazard.move(0, 25);
+    spikeWall->hazard.rotate(90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 50;i >= 0;i -= 25) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, -i+350, i+425);
+    if (i == 50) spikeWall->hazard.move(0, 50);
+    else if (i == 25) spikeWall->hazard.move(0, 25);
+    spikeWall->hazard.rotate(-90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 50;i >= 0;i -= 25) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+250, i+550);
+    if (i == 50) spikeWall->hazard.move(0, 50);
+    else if (i == 25) spikeWall->hazard.move(0, 25);
+    spikeWall->hazard.rotate(90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 250;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, 375, i+115);
+    spikeWall->hazard.rotate(-90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 150;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, 250, i+350);
+    spikeWall->hazard.rotate(90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 100;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, 375, i+575);
+    spikeWall->hazard.rotate(-90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 250;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+195, 750);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 100;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+700, 700);
+    spikeWall->hazard.rotate(180);
+    spikeEverest.push_back(*spikeWall);
+  }  
+
+  for (int i = 0;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+580, 750);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 350;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+400, 625);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 350;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+575, 475);
+    spikeWall->hazard.rotate(180);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 250;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, 875, i+500);
+    spikeWall->hazard.rotate(-90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 350;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, 450, i+225);
+    spikeWall->hazard.rotate(90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 100;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+625, 275);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 50;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+525, 350);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 100;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+750, 200);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 50;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+800, 75);
+    spikeWall->hazard.rotate(180);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 50;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+675, 150);
+    spikeWall->hazard.rotate(180);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 150;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+450, 225);
+    spikeWall->hazard.rotate(180);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 0;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+600, 350);
+    spikeWall->hazard.rotate(-90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 0;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+725, 275);
+    spikeWall->hazard.rotate(-90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 0;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+850, 200);
+    spikeWall->hazard.rotate(-90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 100;i >= 0;i -= 25) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, -i+1125, i+150);
+    if (i == 100) spikeWall->hazard.move(0, 100);
+    else if (i == 75) spikeWall->hazard.move(0, 75);
+    else if (i == 50) spikeWall->hazard.move(0, 50);
+    else if (i == 25) spikeWall->hazard.move(0, 25);
+    spikeWall->hazard.rotate(-90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 100;i >= 0;i -= 25) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+975, i+375);
+    if (i == 100) spikeWall->hazard.move(0, 100);
+    else if (i == 75) spikeWall->hazard.move(0, 75);
+    else if (i == 50) spikeWall->hazard.move(0, 50);
+    else if (i == 25) spikeWall->hazard.move(0, 25);
+    spikeWall->hazard.rotate(90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 100;i >= 0;i -= 25) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+1059, i+400);
+    if (i == 100) spikeWall->hazard.move(0, 100);
+    else if (i == 75) spikeWall->hazard.move(0, 75);
+    else if (i == 50) spikeWall->hazard.move(0, 50);
+    else if (i == 25) spikeWall->hazard.move(0, 25);
+    spikeWall->hazard.rotate(-90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 75;i >= 0;i -= 25) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, -i+1025, i+100);
+    if (i == 100) spikeWall->hazard.move(0, 100);
+    else if (i == 75) spikeWall->hazard.move(0, 75);
+    else if (i == 50) spikeWall->hazard.move(0, 50);
+    else if (i == 25) spikeWall->hazard.move(0, 25);
+    spikeWall->hazard.rotate(90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 150;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, 1150, i+625);
+    spikeWall->hazard.rotate(-90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 150;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, 1075, i+625);
+    spikeWall->hazard.rotate(90);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  for (int i = 50;i >= 0;i -= 50) {
+    fixture* spikeWall = new fixture(true, false, spike, 0, 0, i+1075, 750);
+    spikeEverest.push_back(*spikeWall);
+  }
+
+  spikeEverest.push_back(*new fixture(true, false, spike, 0, 0, 850, 750));
+
+  //first ascent
+  spikeEverest.push_back(*new fixture(false, false, spike, 75, 25, 75, 675));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 800, 0, 0));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 600, 200, 200));
+  spikeEverest.push_back(*new fixture(false, false, spike, 45, 25, 75, 500));
+  spikeEverest.push_back(*new fixture(false, false, spike, 45, 25, 100, 325));
+  spikeEverest.push_back(*new fixture(false, false, spike, 45, 25, 75, 195));
+  spikeEverest.push_back(*new fixture(false, false, spike, 400, 25, 0, 0));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 650, 400, 0));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 50, 225, 300));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 50, 375, 425));
+  spikeEverest.push_back(*new fixture(false, false, spike, 50, 50, 350, 475));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 50, 225, 650));
+  //hallway interim
+  fixture jutSpike(true, false, spike, 0, 0, 325, 700);
+  jutSpike.hazard.rotate(90);
+  spikeEverest.push_back(jutSpike);
+  spikeEverest.push_back(*new fixture(false, false, spike, 50, 100, 225, 700));
+  spikeEverest.push_back(*new fixture(false, false, spike, 75, 25, 375, 725));
+  spikeEverest.push_back(*new fixture(false, false, spike, 625, 25, 275, 775));
+  spikeEverest.push_back(*new fixture(false, false, spike, 400, 25, 400, 650));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 350, 900, 450));
+  spikeEverest.push_back(*new fixture(false, false, spike, 400, 25, 525, 425));
+  spikeEverest.push_back(*new fixture(false, false, spike, 50, 25, 775, 605));
+  spikeEverest.push_back(*new fixture(false, false, spike, 75, 25, 625, 510));
+  spikeEverest.push_back(*new fixture(false, false, spike, 75, 25, 625, 600));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 115, 700, 510));
+  spikeEverest.push_back(*new fixture(false, false, spike, 50, 25, 475, 550));
+  spikeEverest.push_back(*new fixture(false, false, spike, 50, 25, 415, 425));
+  spikeEverest.push_back(*new fixture(false, false, spike, 100, 25, 525, 375));
+  spikeEverest.push_back(*new fixture(false, false, spike, 100, 25, 650, 300));
+  spikeEverest.push_back(*new fixture(false, false, spike, 100, 25, 775, 225));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 275, 900, 150));
+  spikeEverest.push_back(*new fixture(false, false, spike, 225, 25, 400, 175));
+  spikeEverest.push_back(*new fixture(false, false, spike, 100, 25, 650, 100));
+  spikeEverest.push_back(*new fixture(false, false, spike, 100, 25, 775, 25));
+  spikeEverest.push_back(*new fixture(false, false, spike, 100, 25, 900, 0));
+  spikeEverest.push_back(*new fixture(false, false, spike, 100, 25, 525, 400));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 125, 625, 300));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 100, 750, 225));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 100, 750, 25));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 100, 625, 100));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 100, 875, 150));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 50, 875, 0));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 25, 550, 350));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 25, 675, 275));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 25, 800, 200));
+  //The drop...
+  spikeEverest.push_back(*new fixture(false, false, spike, 300, 25, 900, 0));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 800, 1175, 0));
+  spikeEverest.push_back(*new fixture(false, false, spike, 275, 25, 900, 775));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 50, 925, 150));
+  spikeEverest.push_back(*new fixture(false, false, spike, 100, 50, 925, 100));
+  fixture winPoint(false, true, spike, 25, 25, 1100, 700);
+  winPoint.platform.setFillColor(sf::Color(255, 255, 255));
+  spikeEverest.push_back(winPoint);
+  //Finishing touches
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 50, 1150, 150));
+  spikeEverest.push_back(*new fixture(false, false, spike, 50, 50, 1125, 200));
+  spikeEverest.push_back(*new fixture(false, false, spike, 75, 50, 1100, 250));
+  spikeEverest.push_back(*new fixture(false, false, spike, 100, 50, 1075, 300));
+  spikeEverest.push_back(*new fixture(false, false, spike, 75, 50, 1100, 350));
+  spikeEverest.push_back(*new fixture(false, false, spike, 50, 50, 1125, 400));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 50, 1150, 450));
+  spikeEverest.push_back(*new fixture(false, false, spike, 25, 50, 925, 425));
+  spikeEverest.push_back(*new fixture(false, false, spike, 50, 50, 925, 475));
+  spikeEverest.push_back(*new fixture(false, false, spike, 75, 50, 925, 525));
+  spikeEverest.push_back(*new fixture(false, false, spike, 100, 300, 925, 575));
+  spikeEverest.push_back(*new fixture(false, false, spike, 200, 200, 425, 0));
+  spikeEverest.push_back(*new fixture(false, false, spike, 125, 100, 625, 0));
+  spikeEverest.push_back(*new fixture(false, false, spike, 125, 25, 750, 0));
+  spikeEverest.push_back(*new fixture(false, false, spike, 150, 175, 750, 250));
+  spikeEverest.push_back(*new fixture(false, false, spike, 100, 100, 650, 325));
+
   return spikeEverest;
 }
